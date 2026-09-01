@@ -141,8 +141,10 @@ window.addEventListener('DOMContentLoaded', event => {
     }, { passive: true }) // Added passive: true for potential performance improvement
 
 
-    // Initialize portfolio filter on page load - show 'recent' initially
-    filterProjects('recent');
+    // Initialize filtering only when the filter controls are present.
+    if (document.getElementById('project-filters')) {
+        filterProjects('recent');
+    }
 
 }); // End of DOMContentLoaded
 
